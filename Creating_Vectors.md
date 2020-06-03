@@ -145,6 +145,10 @@ human_percquantile_permuted<-as.vector(humandatapermuted[[3]])
 ## Human without maf filtering
 
 file_observed_data<-"freq_files/clean_frequencies_humansCDS.txt"
+
+Note, a few non-variable sites were retrieved in the frequencies files, we remove them at this stage
+data<-read.table()
+
 humandata_nomafFilter <-output_vectors(filename = file_observed_data)
 human_fst_observed_nomafFilter<-as.numeric(humandata_nomafFilter[[1]])
 human_quantile_observed_nomafFilter<-as.numeric(humandata_nomafFilter[[2]])
