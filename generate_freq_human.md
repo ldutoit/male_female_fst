@@ -59,8 +59,9 @@ We can now filter the vcf to keep only those individuals and sites without msisi
 
 ```bash
 module load VCFtools
-vcftools --vcf 1000humans_onlycds_clean.vcf --keep indstokeep.txt --max-missing-count 0 --recode --min-alleles 2 --max-alleles 2
-#After filtering, kept 121487 out of a possible 121866 Sites'
+vcftools --vcf 1000humans_onlycds_clean.vcf --keep indstokeep.txt --max-missing-count 0 --recode --min-alleles 2 --max-alleles 2 --maf 0.000001 # the maf is to remove fixed variants across all individuals 
+i.e. non SNPs_
+#After filtering, kept 121148 out of a possible 121866 Sites
 #separate males and females in two vcf to get allele frequencies.
 vcftools --vcf out.recode.vcf --keep males.txt --freq
 mv out.frq males_frequency.frq
@@ -81,17 +82,8 @@ paste temp_posinfo.txt male_allele_N.txt  tempmale_p.txt  female_allele_N.txt te
 
 ```
 
-We realised at this point that a few positions were invariable, we remove them here in R. This is not a problem for any other dataset as they are fildered for maf.
 
-```r
-data<-read.table("clean_frequencies_humansCDS.txt",h=T)
-dim(data[which(data$male_freq==data$female_freq),]) # 333 positions and none of them are at p=0.5, all p= 1 or 0, which would generate Na fst.
-data<-data[-which(data$male_freq==data$female_freq),]
-write.table(data,"clean_frequencies_humansCDS.txt",sep="\t",quote=F,row.names=F)
-
-
-That last file [freq_files/clean_frequencies_humansCDS.txt](freq_files/clean_frequencies_humansCDS.txt) is the same I'll obtain for every dataset
-
+```
 ###summary info:
 
 121148 sites in coding sequences of non-overlapping genes
@@ -127,6 +119,8 @@ os.system("cut -f 4  females_frequency.frq > female_allele_N.txt")
 os.system("paste temp_posinfo.txt male_allele_N.txt  tempmale_p.txt  female_allele_N.txt tempfemale_p.txt | tail -n " +str(nsites) + " | cat header.txt - >  permutation_nomaffilter.txt")
 ## first line to scaf	pos	n_males_allele_covered	male_freq	n_females_allele_covered	female_freq
 ```
+
+
 ### CDS MAF>0.05
 
 above  0.05 . Relatively few snps but cannot really go at much lower threshold because I don't have that many flycatchers and pipefish.
