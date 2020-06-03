@@ -40,7 +40,6 @@ plot(100*human_percquantile_observed, pch = 20, col = "RED", ylim = c(0,10))
 points(100*human_percquantile_permuted, pch = 20)
 lines(rep(1, length(fly_percquantile_permuted)), col = "GRAY", lty = 2)
 
-!!!SAVE THIS AS PDF
 plot(100*human_percquantile_observed_nomafFilter, pch = 20, col = "RED", ylim = c(0,10))
 points(100*human_percquantile_permuted_nomafFilter, pch = 20)
 lines(rep(1, length(fly_percquantile_permuted)), col = "GRAY", lty = 2)
