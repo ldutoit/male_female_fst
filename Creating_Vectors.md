@@ -145,19 +145,16 @@ human_percquantile_permuted<-as.vector(humandatapermuted[[3]])
 ## Human without maf filtering
 
 file_observed_data<-"freq_files/clean_frequencies_humansCDS.txt"
-
-data<-read.table()
-
 humandata_nomafFilter <-output_vectors(filename = file_observed_data)
 human_fst_observed_nomafFilter<-as.numeric(humandata_nomafFilter[[1]])
 human_quantile_observed_nomafFilter<-as.numeric(humandata_nomafFilter[[2]])
 human_percquantile_observed_nomafFilter<-as.numeric(humandata_nomafFilter[[3]])
 
-file_permuted_data<-"freq_files/boot_1human.txt"
+file_permuted_data<-"freq_files/permutation_human_nomaffilter.txt"
 humandatapermuted_nomafFilter <-output_vectors(filename = file_permuted_data)
 human_fst_permuted_nomafFilter<-as.vector(humandatapermuted_nomafFilter[[1]])
 human_quantile_permuted_nomafFilter<-as.vector(humandatapermuted_nomafFilter[[2]])
-human_perc_quantile_permuted_nomafFilter<-as.vector(humandatapermuted_nomafFilter[[3]])
+human_percquantile_permuted_nomafFilter<-as.vector(humandatapermuted_nomafFilter[[3]])
 
 
 
@@ -218,9 +215,9 @@ human_perc_quantile_observed: human % observed
 
 human_fst_permuted_nomafFilter: human fst permuted no maf filter for suppmat
 human_quantile_permuted_nomafFilter: human quantile permuted no maf filter for suppmat
-human_perc_quantile_permuted_nomafFilter: human % permuted no maf filter for suppmat
+human_percquantile_permuted_nomafFilter: human % permuted no maf filter for suppmat
 ")
 }
 
-save(README,fly_fst_observed,fly_quantile_observed,fly_percquantile_observed,fly_fst_permuted,fly_quantile_permuted,fly_percquantile_permuted, fish_fst_observed, fish_quantile_observed, fish_percquantile_observed, fish_fst_permuted, fish_quantile_permuted, fish_percquantile_permuted, human_fst_observed, human_quantile_observed, human_percquantile_observed, human_fst_permuted, human_quantile_permuted, human_percquantile_permuted,fish_theoretical_null,human_fst_permuted_nomafFilter,human_quantile_permuted_nomafFilter,human_perc_quantile_permuted_nomafFilter , file="vectors_reanalysis.RData")
+save(README,fly_fst_observed,fly_quantile_observed,fly_percquantile_observed,fly_fst_permuted,fly_quantile_permuted,fly_percquantile_permuted, fish_fst_observed, fish_quantile_observed, fish_percquantile_observed, fish_fst_permuted, fish_quantile_permuted, fish_percquantile_permuted, human_fst_observed, human_quantile_observed, human_percquantile_observed, human_fst_permuted, human_quantile_permuted, human_percquantile_permuted,fish_theoretical_null,human_fst_permuted_nomafFilter,human_quantile_permuted_nomafFilter,human_percquantile_permuted_nomafFilter , file="vectors_reanalysis.RData")
 ```
