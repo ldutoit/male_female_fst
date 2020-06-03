@@ -1,7 +1,7 @@
 Creating\_Vectors
 ================
 
-This short script aims at creating vectors for Tim to play with. It
+This short script aims at creating vectors to play with. It
 saves everything in one file with a README() function.
 
 Running README() is explaining everything.
