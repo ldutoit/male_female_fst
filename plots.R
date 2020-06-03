@@ -17,11 +17,16 @@ lines(sort(fish_theoretical_null), 1:length(fish_fst_permuted)/length(fish_fst_p
 lines(sort(fish_fst_permuted), 1:length(fish_fst_permuted)/length(fish_fst_permuted))
 lines(sort(fish_fst_observed), 1:length(fish_fst_observed)/length(fish_fst_observed), col = "RED")
 dev.off()
+
 n.H = 2/(1/2542 + 1/2466)
 plot(sort(human_fst_observed), erf(sqrt(n.H*sort(human_fst_observed))), type = "l", xlim = c(0, 3/n.H), lwd = 3, col = "gray", xlab = "F.ST", ylab = "CDF")
 lines(sort(human_fst_permuted), 1:length(human_fst_permuted)/length(human_fst_permuted))
-lines(sort(human_fst_observed), 1:length(human_fst_permuteduman_fst_observed)/length(human_fst_observed), col = "RED")
+lines(sort(human_fst_observed), 1:length(human_fst_permuted)/length(human_fst_observed), col = "RED")
 
+n.H = 2/(1/2542 + 1/2466)
+plot(sort(human_fst_observed_nomafFilter), erf(sqrt(n.H*sort(human_fst_observed_nomafFilter))), type = "l", xlim = c(0, 3/n.H), lwd = 3, col = "gray", xlab = "F.ST", ylab = "CDF")
+lines(sort(human_fst_permuted_nomafFilter), 1:length(human_fst_permuted_nomafFilter)/length(human_fst_permuted_nomafFilter))
+lines(sort(human_fst_observed_nomafFilter), 1:length(human_fst_permuted_nomafFilter)/length(human_fst_observed_nomafFilter), col = "RED")
 
 #quantile plots (SuppMat Figs.)
 plot(100*fly_percquantile_observed, pch = 20, col = "RED",ylim = c(0, 10))
@@ -33,6 +38,11 @@ points(100*fish_percquantile_permuted, pch = 20)
 lines(rep(1, length(fly_percquantile_permuted)), col = "GRAY", lty = 2)
 plot(100*human_percquantile_observed, pch = 20, col = "RED", ylim = c(0,10))
 points(100*human_percquantile_permuted, pch = 20)
+lines(rep(1, length(fly_percquantile_permuted)), col = "GRAY", lty = 2)
+
+!!!SAVE THIS AS PDF
+plot(100*human_percquantile_observed_nomafFilter, pch = 20, col = "RED", ylim = c(0,10))
+points(100*human_percquantile_permuted_nomafFilter, pch = 20)
 lines(rep(1, length(fly_percquantile_permuted)), col = "GRAY", lty = 2)
 
 
