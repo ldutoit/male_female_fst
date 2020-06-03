@@ -255,7 +255,6 @@ paste temp_posinfo.txt male_allele_N.txt  tempmale_p.txt  female_allele_N.txt te
 ```
 
 
-That last file [freq_files/clean_frequencies_flycatcher.txt](freq_files/clean_frequencies_flycatcher.txt) is the same I'll obtain for every dataset
 
 ```
 ###summary info:
