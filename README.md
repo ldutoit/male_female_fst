@@ -84,7 +84,7 @@ README()
 ```
 **Overall FST**
 
-We also compared overall Fst to 1000 permutation per dataset created using [1000permutations.py](1000permutations.py). That was done in the script: [overallFST.R](overallFST.R)
+We also compared overall Fst to 1000 permutation per dataset created using [1000permutations.py](1000permutations.py). That was done in the script: [overallFST.md](overallFST.md)
 
 ### Figures
 
