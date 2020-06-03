@@ -116,7 +116,7 @@ os.system("cut -f 5 females_frequency.frq | cut -f 2  -d ':' > tempfemale_p.txt"
 os.system("cut -f 1-2 males_frequency.frq > temp_posinfo.txt")
 os.system("cut -f 4  females_frequency.frq > female_allele_N.txt")
 #paste everything together and replace the header as below too
-os.system("paste temp_posinfo.txt male_allele_N.txt  tempmale_p.txt  female_allele_N.txt tempfemale_p.txt | tail -n " +str(nsites) + " | cat header.txt - >  permutation_nomaffilter.txt")
+os.system("paste temp_posinfo.txt male_allele_N.txt  tempmale_p.txt  female_allele_N.txt tempfemale_p.txt | tail -n " +str(nsites) + " | cat header.txt - >  permutation_human_nomaffilter.txt")
 ## first line to scaf	pos	n_males_allele_covered	male_freq	n_females_allele_covered	female_freq
 ```
 
