@@ -1,4 +1,5 @@
-Creating\_Vectors
+
+Creating Vectors
 ================
 
 This short script aims at creating vectors to play with. It
@@ -16,12 +17,7 @@ library("ggplot2")
 library("lemon")
 ```
 
-    ## 
-    ## Attaching package: 'lemon'
-
-    ## The following objects are masked from 'package:ggplot2':
-    ## 
-    ##     CoordCartesian, element_render
+   
 
 ``` r
 #Nei's Fst
@@ -144,6 +140,24 @@ humandatapermuted <-output_vectors(filename = file_permuted_data)
 human_fst_permuted<-as.vector(humandatapermuted[[1]])
 human_quantile_permuted<-as.vector(humandatapermuted[[2]])
 human_percquantile_permuted<-as.vector(humandatapermuted[[3]])
+
+
+## Human without maf filtering
+
+file_observed_data<-"freq_files/clean_frequencies_humansCDS.txt"
+humandata_nomafFilter <-output_vectors(filename = file_observed_data)
+human_fst_observed_nomafFilter<-as.numeric(humandata_nomafFilter[[1]])
+human_quantile_observed_nomafFilter<-as.numeric(humandata_nomafFilter[[2]])
+human_percquantile_observed_nomafFilter<-as.numeric(humandata_nomafFilter[[3]])
+
+file_permuted_data<-"freq_files/boot_1human.txt"
+humandatapermuted_nomafFilter <-output_vectors(filename = file_permuted_data)
+human_fst_permuted_nomafFilter<-as.vector(humandatapermuted_nomafFilter[[1]])
+human_quantile_permuted_nomafFilter<-as.vector(humandatapermuted_nomafFilter[[2]])
+human_perc_quantile_permuted_nomafFilter<-as.vector(humandatapermuted_nomafFilter[[3]])
+
+
+
 ```
 
 ### Saving object
@@ -199,11 +213,11 @@ human_fst_observed: human fst  observed
 human_quantile_observed: human quantile observed 
 human_perc_quantile_observed: human % observed 
 
-human_fst_permuted: human fst permuted
-human_quantile_permuted: human quantile permuted
-human_perc_quantile_permuted: human % permuted 
+human_fst_permuted_nomafFilter: human fst permuted no maf filter for suppmat
+human_quantile_permuted_nomafFilter: human quantile permuted no maf filter for suppmat
+human_perc_quantile_permuted_nomafFilter: human % permuted no maf filter for suppmat
 ")
 }
 
-save(README,fly_fst_observed,fly_quantile_observed,fly_percquantile_observed,fly_fst_permuted,fly_quantile_permuted,fly_percquantile_permuted, fish_fst_observed, fish_quantile_observed, fish_percquantile_observed, fish_fst_permuted, fish_quantile_permuted, fish_percquantile_permuted, human_fst_observed, human_quantile_observed, human_percquantile_observed, human_fst_permuted, human_quantile_permuted, human_percquantile_permuted,fish_theoretical_null,file="vectors_reanalysis.RData")
+save(README,fly_fst_observed,fly_quantile_observed,fly_percquantile_observed,fly_fst_permuted,fly_quantile_permuted,fly_percquantile_permuted, fish_fst_observed, fish_quantile_observed, fish_percquantile_observed, fish_fst_permuted, fish_quantile_permuted, fish_percquantile_permuted, human_fst_observed, human_quantile_observed, human_percquantile_observed, human_fst_permuted, human_quantile_permuted, human_percquantile_permuted,fish_theoretical_null,human_fst_permuted_nomafFilter,human_quantile_permuted_nomafFilter,human_perc_quantile_permuted_nomafFilter , file="vectors_reanalysis.RData")
 ```
