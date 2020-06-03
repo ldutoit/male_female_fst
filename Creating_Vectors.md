@@ -213,6 +213,11 @@ human_fst_observed: human fst  observed
 human_quantile_observed: human quantile observed 
 human_perc_quantile_observed: human % observed 
 
+human_fst_permuted: human fst  permuted
+human_quantile_permuted: human quantile permuted 
+human_percquantile_permuted: human % permuted 
+
+
 human_fst_observed_nomafFilter: human no maf filter fst observed
 human_quantile_observed_nomafFilter: human no maf filter quantile observed
 human_percquantile_observed_nomafFilter: human no maf filter % observed
@@ -222,5 +227,5 @@ human_quantile_permuted_nomafFilter: human quantile permuted no maf filter for s
 human_percquantile_permuted_nomafFilter: human % permuted no maf filter for suppmat
 ")
 } 
-save(README,fly_fst_observed,fly_quantile_observed,fly_percquantile_observed,fly_fst_permuted,fly_quantile_permuted,fly_percquantile_permuted, fish_fst_observed, fish_quantile_observed, fish_percquantile_observed, fish_fst_permuted, fish_quantile_permuted, fish_percquantile_permuted, human_fst_observed, human_quantile_observed, human_percquantile_observed, human_fst_permuted, human_quantile_permuted, human_percquantile_permuted,fish_theoretical_null,human_fst_observed_nomafFilter ,human_quantile_observed_nomafFilter ,human_fst_permuted_nomafFilter,human_quantile_permuted_nomafFilter,human_percquantile_permuted_nomafFilter , file="vectors_reanalysis.RData")
+save(README,fly_fst_observed,fly_quantile_observed,fly_percquantile_observed,fly_fst_permuted,fly_quantile_permuted,fly_percquantile_permuted, fish_fst_observed, fish_quantile_observed, fish_percquantile_observed, fish_fst_permuted, fish_quantile_permuted, fish_percquantile_permuted, human_fst_observed, human_quantile_observed, human_percquantile_observed, human_fst_permuted, human_quantile_permuted, human_percquantile_permuted,fish_theoretical_null,human_fst_observed_nomafFilter ,human_quantile_observed_nomafFilter ,human_percquantile_observed_nomafFilter,human_fst_permuted_nomafFilter,human_quantile_permuted_nomafFilter,human_percquantile_permuted_nomafFilter , file="vectors_reanalysis.RData")
 ```
