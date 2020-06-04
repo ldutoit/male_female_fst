@@ -45,13 +45,13 @@ for (path in paths){
 #       2.5%       97.5%
 #0.001507340 0.001693004#
 
-[1] "flycatcher/1000bootstraps/"
-[1] "means"
-       2.5%       97.5%
-0.005099666 0.005797476
-[1] "medians"
-       2.5%       97.5%
-0.002247276 0.002566306
+#[1] "flycatcher/1000bootstraps/"
+#[1] "means"
+#       2.5%       97.5%
+#0.005099666 0.005797476
+#[1] "medians"
+#       2.5%       97.5%
+#0.002247276 0.002566306
 
 ```
 #NOW the original values on observed data
