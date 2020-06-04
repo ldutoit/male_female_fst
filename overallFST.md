@@ -16,7 +16,8 @@ for (path in paths){
 		if (n_perm%%10==0){print(n_perm)}
 		#print(c(path,permutation))
 		perm<-read.table(paste(path,permutation,sep=""),h=T)
-		fst<-nei_fst_func(as.numeric(perm$male_freq),as.numeric(perm$female_freq))
+		fst<-nei_fst_func(as.numeric(as.character(perm$male_freq)),as.numeric(as.character(perm$female_freq)))
+
 		means<-c(means, mean(fst))
 		medians<-c(medians, median(fst))
 	}
