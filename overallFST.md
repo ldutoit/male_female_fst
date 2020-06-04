@@ -45,16 +45,16 @@ for (path in paths){
 #       2.5%       97.5%
 #0.001507340 0.001693004#
 
-#[1] "flycatcher/1000bootstraps/"
-#[1] "means"
-#        2.5%        97.5%
-#-0.006572848 -0.005210488
-#[1] "medians"
-#         2.5%         97.5%
-#-0.0006491399 -0.0005493499
+[1] "flycatcher/1000bootstraps/"
+[1] "means"
+       2.5%       97.5%
+0.005099666 0.005797476
+[1] "medians"
+       2.5%       97.5%
+0.002247276 0.002566306
 
 ```
-#NOW the original ovalues before permuation
+#NOW the original values on observed data
 
 ```r
 nei_fst_func <- function(pm,pf){((pm-pf)^2)/(4*((pm+pf)/2)*(1-((pm+pf)/2)))}
@@ -88,8 +88,8 @@ so in summary:
 
 
 **Flycatcher**
-mean observed Fst: 0.00756 (95%CI of the permutations: -0.00657 - -0.00521) SIGNIFICANT  
-median observed Fst: 0.00232  (95%CI of the permutations: -0.00065 -0.00055) SIGNIFICANT
+mean observed Fst: 0.00756 (95%CI of the permutations: 0.005099666 -  0.005797476) SIGNIFICANT  
+median observed Fst: 0.00232  (95%CI of the permutations: 0.00225 0.002576306 ) NOT SIGNIFICANT
 
 **Pipefish**
 mean observed Fst: 0.0046 (95%CI of the permutations: 0.0035 - 0.0039) SIGNIFICANT
@@ -100,8 +100,6 @@ median observed Fst: 0.0019  (95%CI of the permutations: 0.0015 0.0017#) SIGNIFI
 
 mean observed Fst:0.00020 (95%CI of the permutations: 0.00017 - 0.00031)  NOT SIGNIFICANT 
 median observed Fst:  9.579e-05  (95%CI of the permutations: 7.761-05 1.5202-04) NOT SIGNIFICANT 
-
-
 
 
 
