@@ -73,7 +73,7 @@ import os
 os.mkdir("1000bootstraps")
 nmales=47
 nfemales=47
-nsites= 137202
+nsites= 95974
 for i in range(1,1001):
 	print("Bootstrap",i)
 	##randomise the indtokeepfile
