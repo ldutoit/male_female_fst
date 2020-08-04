@@ -3,7 +3,7 @@
 
 ## Creating a VCF of CDS only
 
-First, I get CDS only based on code [here](https://github.com/ldutoit/SBE/blob/master/createCDSonly.py (permisson needed for access)) and the flycatcher annnotation [Ficedula_albicollis.fAlb15.e73.gtf]( Ficedula_albicollis.fAlb15.e73.gtf). I reproduce what has been done for Dutoit et al. 2018.
+I reproduce what has been done for Dutoit et al. 2018. I get CDS only based on code [here](https://github.com/ldutoit/SBE/blob/master/createCDSonly.py) (permisson needed for acces)) and the flycatcher annnotation [Ficedula_albicollis.fAlb15.e73.gtf]( Ficedula_albicollis.fAlb15.e73.gtf). 
 
 
 ```python
@@ -165,7 +165,7 @@ len(os.listdir("beds/CDSbeds/"))
 2 more genes that Dutoit at al. 2018, not sure which ones but no issue out of 14915.
 
 ## Creating males and females files
-What is happening now is specific to this project. I will go grab all the SNPs for each of the positions.
+What is happening now is specific to this project. I will go select all the SNPs for each of the positions.
 
 
 ```python
