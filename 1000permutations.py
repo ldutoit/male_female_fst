@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-#This file crreate 1000 permuatation for each dataset to compare overall Fst in the data to a 1000 bootstraped samples
+#This file creates 1000 permutations for each dataset to compare overall Fst in the data tom Fst from 1000 bootstraped samples
 
 #From 1000 genomes analysis folder
 import os
@@ -33,7 +33,7 @@ for i in range(1,1001):
 
 
 
-#From pipefish analysis folder
+#From the pipefish analysis folder
 
 import os
 os.mkdir("1000bootstraps")
@@ -66,7 +66,7 @@ for i in range(1,1001):
 
 
 
-#From flycatcher analysis folder
+#From the flycatcher analysis folder
 
 
 import os
