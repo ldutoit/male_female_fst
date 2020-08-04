@@ -2,8 +2,8 @@
 Creating Vectors
 ================
 
-This short script aims at creating vectors to play with. It
-saves everything in one file with a README() function.
+This short script aims at creating vectors to make most analyses. It
+saves everything in one R data file with a README() function.
 
 Running README() is explaining everything.
 
@@ -33,7 +33,7 @@ quantile_from_expdistrib<-function(pm,pf,nm,nf){
   return(quantilesnp)
 }
 
-#Small function that compute the percentage of data above a given quantile (i.e)
+#Small function that computew the percentage of data above a given quantile (i.e)
 howmuchabove<-function(pm,pf,nm,nf,percent,output="empty",verbose=T){
   exp_param<-exp_chisq(nm,nf)
   n_above = length(which(nei_fst_func(pm,pf)> qchisq(p=percent,df=1)*exp_chisq(nm,nf)))
@@ -62,8 +62,8 @@ theoretical_null<-function(nm,nf){
 }
 ```
 
-The function below is the analysis pipeline applied to any dataset.
-Refer to the README for information on how the allele frequencies files
+The function below is the analysis pipeline applied to each dataset.
+Refer to the [README](README.md) for information on how the allele frequencies files
 where generated.
 
 ``` r
@@ -78,7 +78,7 @@ output_vectors<-function(filename){
   #calculate FST from allele frequencies
   fst.obs<-nei_fst_func(data_observed$male_freq,data_observed$female_freq)
   
-  #calculate in which quantile each snp falls respective to its own theoretical distribution
+  #calculate in which quantile each SNP falls respective to its own theoretical distribution
   quantile_observed<-quantile_from_expdistrib(data_observed$male_freq,data_observed$female_freq,data_observed$n_males_allele_covered,data_observed$n_females_allele_covered)
   
   #draw one value of the theoretical distribution of each SNP as a fair null (only matters when number of sampled alleles varies SNP to SNP)
@@ -110,14 +110,14 @@ fly_quantile_permuted<-as.numeric(flydatapermuted[[2]])
 fly_percquantile_permuted<-as.numeric(flydatapermuted[[3]])
 
 
-##pipefish
+##Pipefish
 file_observed_data<-"freq_files/clean_frequencies_pipefishMAFabove005.txt"
 fishdata <-output_vectors(filename = file_observed_data)
 fish_fst_observed<-as.numeric(fishdata[[1]])
 fish_quantile_observed<-as.numeric(fishdata[[2]])
 fish_percquantile_observed<-as.numeric(fishdata[[3]])
 
-#theoretical null of pipefish with varying 
+#Theoretical null of pipefish with varying nuymber of samples per SNPs 
 data<-read.table(file_observed_data,h=T)
 fish_theoretical_null<-theoretical_null(data$n_males_allele_covered,data$n_females_allele_covered)
 
