@@ -94,7 +94,7 @@ The figure are produced in the file [plots.R](plots.R)
 
 ### Raw data storage
 
-While all the data is published, a copy of all the raw filesis stored on the High Capacity Storage at Otago University under: 
+While all the data is published, a copy of all the raw files is stored on the High Capacity Storage at Otago University under: 
 
 ```
 /Volumes/sci-bioinformatics-project-archive/sexantagonismfst
