@@ -164,7 +164,6 @@ The below code does the bootstrapping from the vcf (note it is a bit ugly as it 
 
 ```python
 import os
-#os.mkdir("100bootstraps")
 nmales=1233
 nfemales=1271
 nsites= 7477
