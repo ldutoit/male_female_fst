@@ -120,7 +120,7 @@ with open("Homo_sapiens.GRCh38.99.CDS.chr.cleaned.bed") as f:
 ```
 ```bash
 module load BCFtools
-zcat allchrom2.vcf.gz  | head -n 100000 | grep "^#" | cat - allexons_toclean.vcf | bcftools sort - | uniq > 1000humans_onlycds_clean.vcf
+zcat allchrom2.vcf.gz  | head -n 100000 | grep "^#" | cat - allcds_toclean.vcf | bcftools sort - | uniq > 1000humans_onlycds_clean.vcf
 ```
 
 I also grabbed the metadata on samples from [https://www.internationalgenome.org/data-portal/sample](https://www.internationalgenome.org/data-portal/sample)
