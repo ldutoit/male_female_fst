@@ -51,7 +51,7 @@ output.close()
 ```
 We now have males.txt and females.txt.
 
-We can now filter the vcf to keep only those individuals and sites without msising data, calculate allele frequencies and then small text processing to get it into one frquency file.
+We can now filter the vcf to keep only those individuals and sites without msising data, calculate allele frequencies and then a bit of text processing to get it into one frequency file.
 
 
 ### frequency file without MAF filtering
@@ -123,13 +123,13 @@ os.system("paste temp_posinfo.txt male_allele_N.txt  tempmale_p.txt  female_alle
 
 ### CDS MAF>0.05
 
-above  0.05 . Relatively few snps but cannot really go at much lower threshold because I don't have that many flycatchers and pipefish.
+MAF above 0.05.
 
 ```bash
 module load VCFtools
 vcftools --vcf 1000humans_onlycds_clean.vcf --keep indstokeep.txt --max-missing-count 0 --recode --min-alleles 2 --max-alleles 2 --maf 0.05
 #After filtering, kept 7477 out of a possible 121866 Sites
-#separate males and fgemales in two vcf to get frequency fast!!!!!
+#separate males and females fast 
 vcftools --vcf out.recode.vcf --keep males.txt --freq
 mv out.frq males_frequency.frq
 vcftools --vcf out.recode.vcf --keep females.txt --freq
