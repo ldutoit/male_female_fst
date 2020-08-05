@@ -31,7 +31,7 @@ output.close()
 
 ```
 
-keep only those individuals and sites with less than 50% data, calculate allele frequencies and then small text processing to get it into one file
+We keep only  sites with less than 50% data, calculate allele frequencies and then do a bit small text processing to get it into one frequency file
 
 
 ```bash
@@ -62,7 +62,7 @@ paste temp_posinfo.txt male_allele_N.txt  tempmale_p.txt  female_allele_N.txt te
 
 ```
 ###summary info:
-45939 sites RAD SNPs, 57 females, up to 167 males, but missing data. Number of sequenced alleles saved for each sex at each site.
+45939 sites RAD SNPs, 57 females, up to 167 males, but missing data. Number of sequenced alleles are saved for each sex at each site.
 ```
 
 ### MAF
@@ -118,8 +118,6 @@ paste temp_posinfo.txt male_allele_N.txt  tempmale_p.txt  female_allele_N.txt te
 ## replace manually the first line to scaf	pos	n_males_allele_covered	male_freq	n_females_allele_covered	female_freq
 ```
 
-Those MAF filtered file are in[freq_files/clean_frequencies_pipefishMAFbelow005.txt](freq_files/clean_frequencies_pipefishMAFbelow005.txt) and 
-frequencies_pipefishMAFabove005.txt](freq_files/clean_frequencies_pipefishMAFabove005.txt) 
 
 
 ### Finally I create the global SFS
@@ -193,7 +191,8 @@ for i in range(1,101):
 vcftools --vcf batch_1.vcf --keep indstokeep.txt --max-missing-count 112 --recode --min-alleles 2 --maf 0.05
 ```
 
-The below code does the bootstrapping from the vcf (note it is a bit gly as it is essentially bash code wrapped into python)
+The below code does the bootstrapping from the vcf (note it is a bit ugly as it is essentially bash code wrapped into python). It was created to do many permutations, which lead to a loop running once.
+
 ```python
 import os
 #os.mkdir("100bootstraps")
