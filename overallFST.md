@@ -28,13 +28,12 @@ for (path in paths){
 		print(quantile(medians,c(0.025,0.975)))
 }		#
 
-#[1] "1000genomes/1000bootstraps/"
-#[1] "means"
-#        2.5%        97.5%
-#0.0001745306 0.0003184714
-#[1] "medians"
-#        2.5%        97.5%
-#7.761167e-05 1.520658e-04#
+[1] "means"
+        2.5%        97.5%
+0.0001865950 0.0003012939
+[1] "medians"
+        2.5%        97.5%
+8.354318e-05 1.408394e-04
 #
 
 #[1] "pipefish/1000bootstraps/"
@@ -70,9 +69,9 @@ median(fst)
 data<-read.table("freq_files/clean_frequencies_humansCDSMAFabove005.txt",h=T)
 fst<-nei_fst_func(as.numeric(data$male_freq),as.numeric(data$female_freq))
 mean(fst)
-#[1] 0.0002004794
+#[1] 0.0001976549
 median(fst)
-#[1]  9.578959e-05
+#[1]  9.146649e-05
 
 
 
@@ -98,8 +97,8 @@ median observed Fst: 0.0019  (95%CI of the permutations: 0.0015 0.0017#) SIGNIFI
 
 **Humans**
 
-mean observed Fst:0.00020 (95%CI of the permutations: 0.00017 - 0.00031)  NOT SIGNIFICANT 
-median observed Fst:  9.579e-05  (95%CI of the permutations: 7.761-05 1.5202-04) NOT SIGNIFICANT 
 
+mean observed Fst: 0.0001976549 (95%CI of the permutations: 0.0001865950 - 0.0003012939)  NOT SIGNIFICANT 
+median observed Fst:  9.146649e-05  (95%CI of the permutations: 8.354318e-05 1.408394e-04) NOT SIGNIFICANT 
 
 
