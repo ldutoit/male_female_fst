@@ -61,7 +61,7 @@ We can now filter the vcf to keep only those individuals and sites without msisi
 module load VCFtools
 vcftools --vcf 1000humans_onlycds_clean.vcf --keep indstokeep.txt --max-missing-count 0 --recode --min-alleles 2 --max-alleles 2 --maf 0.000001 # the maf is to remove fixed variants across all individuals 
 i.e. non SNPs_
-#After filtering, kept 121148 out of a possible 121866 Sites
+#After filtering, kept 999190 out of a possible 1007730 Sites
 #separate males and females in two vcf to get allele frequencies.
 vcftools --vcf out.recode.vcf --keep males.txt --freq
 mv out.frq males_frequency.frq
@@ -86,7 +86,7 @@ paste temp_posinfo.txt male_allele_N.txt  tempmale_p.txt  female_allele_N.txt te
 ```
 ###summary info:
 
-121148 sites in coding sequences of non-overlapping genes
+999190 sites in coding sequences of non-overlapping genes
 all site are sequenced for every male (2466 alleles) and every female (2542 females).
 ```
 ### Permutation no maf filtering
@@ -97,7 +97,7 @@ The below code does the bootstrapping from the vcf (note it is a bit ugly as it 
 import os
 nmales=1233
 nfemales=1271
-nsites= 121148
+nsites= 999190
 ##randomise the indtokeepfile
 os.system("shuf indstokeep.txt > randomisedindstokeep.txt")
 #grab males and females randomly
@@ -128,7 +128,7 @@ MAF above 0.05.
 ```bash
 module load VCFtools
 vcftools --vcf 1000humans_onlycds_clean.vcf --keep indstokeep.txt --max-missing-count 0 --recode --min-alleles 2 --max-alleles 2 --maf 0.05
-#After filtering, kept 7477 out of a possible 121866 Sites
+#After filtering, kept 44527 out of a possible 1007730 Sites
 #separate males and females fast 
 vcftools --vcf out.recode.vcf --keep males.txt --freq
 mv out.frq males_frequency.frq
@@ -166,7 +166,7 @@ The below code does the bootstrapping from the vcf (note it is a bit ugly as it 
 import os
 nmales=1233
 nfemales=1271
-nsites= 7477
+nsites= 44527
 print("Bootstrap",i)
 ##randomise the indtokeepfile
 os.system("shuf indstokeep.txt > randomisedindstokeep.txt")
