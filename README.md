@@ -82,10 +82,11 @@ it can be loaded in R as follow:
 load("vectors_reanalysis.RData")
 README()
 ```
-**Overall FST**
+**Overall FST and chi-square**
 
 We also compared overall Fst to 1000 permutation per dataset created using [1000permutations.py](1000permutations.py). That was done in the script: [overallFST.md](overallFST.md)
 
+We compared the tail of the observed distribution to the tail of the expected distributions and used chi-square to test for tail enrichment at 5% and 1% in [chisquare.md](chisquare.md) 
 ### Figures
 
 The figure are produced in the file [plots.R](plots.R)
