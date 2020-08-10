@@ -2,7 +2,7 @@
 
 In this folder, we compare male female Fst of published datasets on a SNP per SNP basis to a null expected distribution. This README aims at guiding the interested reader quickly to key functions and data of the project. We would be happy to provide further help with this folder, do not hesitate to contact dutoit.ludovic@gmail.com.
 
-This folder does not contain the raw or intermediate data files but it contains all the code from the raw data as well as the vectors used to create the figures in the file [vectors_reanalysis.RData]. See below for more detailed information. 
+This folder does not contain the raw or intermediate data files but it contains all the code from the raw data as well as the vectors used to create the figures in the file [vectors_reanalysis.RData](vectors_reanalysis.RData). See below for more detailed information. 
 
 ## Datasets
 
